@@ -1,13 +1,15 @@
 package com.company;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(controller(25, -10));
-        System.out.println(controller(79, 6));
-        System.out.println(controller(25, -50));
-        System.out.println(controller(28, -10));
-        System.out.println(controller(23, 0));
+        System.out.println(controller(generateRandomAge(), -10));
+        System.out.println(controller(generateRandomAge(), 6));
+        System.out.println(controller(generateRandomAge(), -50));
+        System.out.println(controller(generateRandomAge(), -10));
+        System.out.println(controller(generateRandomAge(), 0));
     }
 
     public static String controller(int age, int temperature) {
@@ -20,6 +22,12 @@ public class Main {
         } else {
             return "Оставайтесь дома.";
         }
+    }
+
+    public static int generateRandomAge() {
+        int maxAge = 100;
+        Random random = new Random();
+        return random.nextInt(maxAge);
     }
 }
 
